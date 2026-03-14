@@ -932,7 +932,7 @@ const handleEditPropertyChange = (
                                 ? property.main_image_path.startsWith('/uploads')
                                   ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                   : property.main_image_path
-                                : '//client/img/property-placeholder-image.png' // Fallback image
+                                : '/client/img/property-placeholder-image.png' // Fallback image
                             } />{" "}{property.name}</td>
                             <td className="tasks_name">
                               #{property.house_number} {property.street_name} {property.city} <br/> {property.zip_code} {property.state} {property.country}
@@ -1348,7 +1348,7 @@ const handleEditPropertyChange = (
                               ? image.filePath.startsWith('/uploads')
                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${image.filePath}`
                                 : image.filePath
-                              : '//client/img/property-placeholder-image.png' // Fallback image
+                              : '/client/img/property-placeholder-image.png' // Fallback image
                           } className="w-100 mb-2" alt={`Image ${index + 1}`} />
                           {mainImageId != Number(image.imageId) && <button className="btn btn-dark me-2" disabled={loadingSetImageAsMainIndex === Number(image.imageId)} onClick={() => handleSetImageAsMain(Number(image.imageId), image.filePath ?? "", Number(image.propertyId))}>
                             {loadingSetImageAsMainIndex == Number(image.imageId) ? (
@@ -1506,7 +1506,7 @@ const handleEditPropertyChange = (
                                 ? addCoverImageFormData.cover_image_path.startsWith('/uploads')
                                   ? `${COMPANY_PRIMARY_DOMAIN_URL}${addCoverImageFormData.cover_image_path}`
                                   : addCoverImageFormData.cover_image_path
-                                : '//client/img/default-property-cover.png' // Fallback image
+                                : '/client/img/default-property-cover.png' // Fallback image
                             } width="100%"/>
                   <div className="input-group pt-3">
                     <input type="file" accept="image/*" className="form-control" name="image" onChange={handleAddCoverImageChange} required />

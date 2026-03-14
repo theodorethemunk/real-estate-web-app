@@ -146,7 +146,7 @@ const DescriptionPage: React.FC<{ settings: Setting[] }> = ({ settings }) => {
                                 ? mainImage.startsWith('/uploads')
                                   ? `http://sommyprop-001-site2.otempurl.com${mainImage}`
                                   : mainImage
-                                : '//client/img/property-placeholder-image.png'
+                                : '/client/img/property-placeholder-image.png'
                             } alt="image" id="main-peroperty-image" />
                     </div>
 
@@ -166,9 +166,9 @@ const DescriptionPage: React.FC<{ settings: Setting[] }> = ({ settings }) => {
                     <div className="list">
                       <ul>
                         <li>Features:</li>
-                        <li><img src="//client/img/icons/bed1.svg" alt="image" />x{propertyInfo?.total_bedrooms} <span> | </span></li>
-                        <li><img src="//client/img/icons/bath1.svg" alt="image" />x{propertyInfo?.total_bathrooms} <span> | </span></li>
-                        <li><img src="//client/img/icons/sqare1.svg" alt="image" />{propertyInfo?.plot_size}</li>
+                        <li><img src="/client/img/icons/bed1.svg" alt="image" />x{propertyInfo?.total_bedrooms} <span> | </span></li>
+                        <li><img src="/client/img/icons/bath1.svg" alt="image" />x{propertyInfo?.total_bathrooms} <span> | </span></li>
+                        <li><img src="/client/img/icons/sqare1.svg" alt="image" />{propertyInfo?.plot_size}</li>
                       </ul>
                       <ul className="m-0">
                         <li>Location:</li>
@@ -211,7 +211,7 @@ const DescriptionPage: React.FC<{ settings: Setting[] }> = ({ settings }) => {
                                 ? image.filePath.startsWith('/uploads')
                                   ? `http://sommyprop-001-site2.otempurl.com${image.filePath}`
                                   : image.filePath
-                                : '//client/img/property-placeholder-image.png' // Fallback image
+                                : '/client/img/property-placeholder-image.png' // Fallback image
                             }
                             alt="Property"
                             className="img-fluid rounded"
@@ -253,7 +253,7 @@ const DescriptionPage: React.FC<{ settings: Setting[] }> = ({ settings }) => {
                                 ? videoThumbnail.startsWith('/uploads')
                                   ? `http://sommyprop-001-site2.otempurl.com${videoThumbnail}`
                                   : videoThumbnail
-                                : '//client/img/property-placeholder-image.png' // Fallback image
+                                : '/client/img/property-placeholder-image.png' // Fallback image
                             } alt="video-thumbnail" />
                           </div>
                           <a
@@ -424,7 +424,7 @@ const DescriptionPage: React.FC<{ settings: Setting[] }> = ({ settings }) => {
                                 ? image.image_path.startsWith('/uploads')
                                   ? `http://sommyprop-001-site2.otempurl.com${image.image_path}`
                                   : image.image_path
-                                : '//client/img/property-placeholder-image.png' // Fallback image
+                                : '/client/img/property-placeholder-image.png' // Fallback image
                             } alt="floor-plan-image" />
                                     </div>
                                   </div>

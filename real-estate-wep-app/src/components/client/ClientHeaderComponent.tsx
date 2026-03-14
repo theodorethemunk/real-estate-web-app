@@ -143,7 +143,7 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
           <div className="col-12">
             <div className="mobile-header-elements">
               <div className="mobile-logo">
-                <a href="/home"><img src="//client/img/logo/main-logo.png" /></a>
+                <a href="/home"><img src="/client/img/logo/main-logo.png" /></a>
               </div>
               <div className="mobile-right d-flex gap-1 align-items-center">
                 <div className="search-icon header__search header-search-btn">
@@ -167,7 +167,7 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
       <div className="mobile-sidebar mobile-sidebar1">
         <div className="logosicon-area">
           <div className="logos">
-            <img src="//client/img/logo/main-logo.png" />
+            <img src="/client/img/logo/main-logo.png" />
           </div>
           <div className="menu-close">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

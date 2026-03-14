@@ -91,7 +91,7 @@ const MyPropertiesPage: React.FC<{ savedUserId: string }> = ({ savedUserId }) =>
                                           ? history.imageFilePath.startsWith('/uploads')
                                             ? `${COMPANY_PRIMARY_DOMAIN_URL}${history.imageFilePath}`
                                             : history.imageFilePath
-                                          : '//client/img/property-placeholder-image.png' // Fallback image
+                                          : '/client/img/property-placeholder-image.png' // Fallback image
                                       } />
                             <div className="details">
                               <a href="#">{history.name}</a>

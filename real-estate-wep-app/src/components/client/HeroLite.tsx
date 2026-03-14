@@ -11,7 +11,7 @@ const HeroComponentLite: React.FC<HeroComponentLiteProps> = ({
 }) => {
   return (
     <div className="hero-inner-section-area-sidebar">
-      <img src="//client/img/all-images/hero/hero-img1.png" alt="page-header-bg-image" className="hero-img1" />
+      <img src="/client/img/all-images/hero/hero-img1.png" alt="page-header-bg-image" className="hero-img1" />
       <div className="container">
         <div className="row">
           <div className="col-lg-12">

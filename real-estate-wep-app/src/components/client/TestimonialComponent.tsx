@@ -36,7 +36,7 @@ const TestimonialComponent = () => {
             <div
                 className="testimonial1-section-area sp1 py-5"
                 style={{
-                    backgroundImage: "url(//client/img/all-images/bg/bg1.png)",
+                    backgroundImage: "url(/client/img/all-images/bg/bg1.png)",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
@@ -90,7 +90,7 @@ const TestimonialComponent = () => {
                                                 <div className="col-lg-7">
                                                     <div className="testimonial-box p-4 border rounded shadow bg-white">
                                                         <img
-                                                            src="//client/img/icons/quoto-icon1.svg"
+                                                            src="/client/img/icons/quoto-icon1.svg"
                                                             alt="quote-icon"
                                                             className="mb-3"
                                                         />
@@ -113,7 +113,7 @@ const TestimonialComponent = () => {
 
                                                             {/* Logo - Pushes to Right */}
                                                             <img
-                                                                src="//client/img/logo/main-logo.png"
+                                                                src="/client/img/logo/main-logo.png"
                                                                 alt="logo"
                                                                 className="ms-auto d-none d-md-block"
                                                                 height="30"

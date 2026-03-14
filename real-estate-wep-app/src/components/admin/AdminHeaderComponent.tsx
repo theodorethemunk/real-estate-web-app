@@ -45,25 +45,25 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
             <div className="navbar-brand-box horizontal-logo">
               <a href="home" className="logo logo-dark">
                 <span className="logo-sm">
-                  <img src="//client/img/logo/main-logo.png" alt="Logo Small" height="30" />
+                  <img src="/client/img/logo/main-logo.png" alt="Logo Small" height="30" />
                 </span>
                 <span className="logo-lg">
-                  <img src="//client/img/logo/main-logo.png" alt="Logo Large Dark" height="25" />
+                  <img src="/client/img/logo/main-logo.png" alt="Logo Large Dark" height="25" />
                 </span>
               </a>
               <a href="#" className="logo logo-light">
                 <span className="logo-sm">
-                  <img src="//client/img/logo/main-logo.png" alt="Logo Small" height="30" />
+                  <img src="/client/img/logo/main-logo.png" alt="Logo Small" height="30" />
                 </span>
                 <span className="logo-lg">
-                  <img src="//client/img/logo/main-logo.png" alt="Logo Large Light" height="25" />
+                  <img src="/client/img/logo/main-logo.png" alt="Logo Large Light" height="25" />
                 </span>
               </a>
             </div>
 
             {/* Hamburger Menu */}
             <div className="d-block d-lg-none px-3 fs-16 header-item vertical-menu-btn pt-4">
-              <img src="//client/img/logo/main-logo.png" alt="logo" height="25" />
+              <img src="/client/img/logo/main-logo.png" alt="logo" height="25" />
             </div>
           </div>
 

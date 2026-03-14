@@ -99,7 +99,7 @@ const PriceHistoryPage: React.FC = () => {
                                       ? history.imagePath.startsWith("/uploads")
                                         ? `${COMPANY_PRIMARY_DOMAIN_URL}${history.imagePath}`
                                         : history.imagePath
-                                      : "//client/img/property-placeholder-image.png" // Fallback image
+                                      : "/client/img/property-placeholder-image.png" // Fallback image
                                   }
                                 />
                               </a>

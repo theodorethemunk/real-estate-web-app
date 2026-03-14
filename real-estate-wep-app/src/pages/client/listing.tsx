@@ -191,7 +191,7 @@ useEffect(() => {
                                           ? hotProperty.main_image_path.startsWith('/uploads')
                                             ? `${COMPANY_PRIMARY_DOMAIN_URL}${hotProperty.main_image_path}`
                                             : hotProperty.main_image_path
-                                          : '//client/img/property-placeholder-image.png' // Fallback image
+                                          : '/client/img/property-placeholder-image.png' // Fallback image
                                       } alt={hotProperty.name} style={{ height: '400px', objectFit: 'cover' }}  /></a>
                                     </div>
                                     <div className="category-list">
@@ -213,19 +213,19 @@ useEffect(() => {
                                       <ul>
                                         <li>
                                           <a href="#">
-                                            <img src="//client/img/icons/bed1.svg" alt="bed" />
+                                            <img src="/client/img/icons/bed1.svg" alt="bed" />
                                             x{hotProperty.total_bedrooms}
                                           </a>
                                         </li>
                                         <li>
                                           <a href="#">
-                                            <img src="//client/img/icons/bath1.svg" alt="bath" />
+                                            <img src="/client/img/icons/bath1.svg" alt="bath" />
                                             x{hotProperty.total_bathrooms}
                                           </a>
                                         </li>
                                         <li>
                                           <a href="#">
-                                            <img src="//client/img/icons/sqare1.svg" alt="size" />
+                                            <img src="/client/img/icons/sqare1.svg" alt="size" />
                                             {hotProperty.plot_size}
                                           </a>
                                         </li>
@@ -236,12 +236,12 @@ useEffect(() => {
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
             <img
-              src="//client/img/icons/heart1.svg"
+              src="/client/img/icons/heart1.svg"
               className="heart1"
               alt="like"
             />
             <img
-              src="//client/img/icons/heart2.svg"
+              src="/client/img/icons/heart2.svg"
               alt="liked"
               className="heart2"
             />
@@ -343,7 +343,7 @@ useEffect(() => {
                                         ? property.main_image_path.startsWith('/uploads')
                                           ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                           : property.main_image_path
-                                        : '//client/img/property-placeholder-image.png' // Fallback image
+                                        : '/client/img/property-placeholder-image.png' // Fallback image
                                     } alt={property.name} /></a>
                                   </div>
                                   <div className="category-list">
@@ -363,19 +363,19 @@ useEffect(() => {
                                     <ul>
                                       <li>
                                         <a href="#">
-                                          <img src="//client/img/icons/bed1.svg" alt="bed" />
+                                          <img src="/client/img/icons/bed1.svg" alt="bed" />
                                           x{property.total_bedrooms}
                                         </a>
                                       </li>
                                       <li>
                                         <a href="#">
-                                          <img src="//client/img/icons/bath1.svg" alt="bath" />
+                                          <img src="/client/img/icons/bath1.svg" alt="bath" />
                                           x{property.total_bathrooms}
                                         </a>
                                       </li>
                                       <li>
                                         <a href="#">
-                                          <img src="//client/img/icons/sqare1.svg" alt="size" />
+                                          <img src="/client/img/icons/sqare1.svg" alt="size" />
                                           {property.plot_size}
                                         </a>
                                       </li>
@@ -386,12 +386,12 @@ useEffect(() => {
                                       </a>
                                       {/* <a href="javascript:void(0)" className="heart">
                       <img
-                        src="//client/img/icons/heart1.svg"
+                        src="/client/img/icons/heart1.svg"
                         className="heart1"
                         alt="like"
                       />
                       <img
-                        src="//client/img/icons/heart2.svg"
+                        src="/client/img/icons/heart2.svg"
                         alt="liked"
                         className="heart2"
                       />
@@ -452,7 +452,7 @@ useEffect(() => {
                                             ? property.main_image_path.startsWith('/uploads')
                                               ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                               : property.main_image_path
-                                            : '//client/img/property-placeholder-image.png' // Fallback image
+                                            : '/client/img/property-placeholder-image.png' // Fallback image
                                         } alt={property.name} style={{ height: '400px', objectFit: 'cover' }}  />
                                       </div>
                                     </div>
@@ -471,14 +471,14 @@ useEffect(() => {
                                         </svg> {property.city}, {property.state}, {property.country}</p>
                                         <div className="space24"></div>
                                         <ul>
-                                          <li><a href="#"><img src="//client/img/icons/bed1.svg" alt="housebox" />x{property.total_bedrooms}</a></li>
-                                          <li><a href="#"><img src="//client/img/icons/bath1.svg" alt="housebox" />x{property.total_bathrooms}</a></li>
-                                          <li><a href="#"><img src="//client/img/icons/sqare1.svg" alt="housebox" />{property.plot_size}</a></li>
+                                          <li><a href="#"><img src="/client/img/icons/bed1.svg" alt="housebox" />x{property.total_bedrooms}</a></li>
+                                          <li><a href="#"><img src="/client/img/icons/bath1.svg" alt="housebox" />x{property.total_bathrooms}</a></li>
+                                          <li><a href="#"><img src="/client/img/icons/sqare1.svg" alt="housebox" />{property.plot_size}</a></li>
                                         </ul>
                                         <div className="btn-area">
                                           {/* <div className="name-area">
                                     <div className="img">
-                                      <img src="//client/img/all-images/properties/property-img7.png" alt="housebox"/>
+                                      <img src="/client/img/all-images/properties/property-img7.png" alt="housebox"/>
                                     </div>
                                     <div className="text">
                                       <a href="#">Kurt Bates</a>

@@ -34,7 +34,7 @@ const WhatsAppButtonComponent: React.FC<WhatsAppButtonProps> = ({ phoneNumber })
       title="Chat with us on WhatsApp"
     >
       <img
-        src="//client/img/WhatsApp-Logo.png"
+        src="/client/img/WhatsApp-Logo.png"
         width="35"
         height="35"/>
     </div>

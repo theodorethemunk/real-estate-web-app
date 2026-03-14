@@ -48,7 +48,7 @@ const HomePage: React.FC = () => {
       <div className="hero-area-slider">
         <div className="hero1-section-area">
           <img
-            src="//client/img/all-images/hero/hero-img1.png"
+            src="/client/img/all-images/hero/hero-img1.png"
             className="hero-img1"
           />
           <div className="container">
@@ -126,10 +126,10 @@ const HomePage: React.FC = () => {
             <div className="col-lg-6">
               <div className="about-images-area">
                 <div className="img2">
-                  <img src="//client/img/all-images/about/about-img2.png" />
+                  <img src="/client/img/all-images/about/about-img2.png" />
                 </div>
                 <div className="img1">
-                  <img src="//client/img/all-images/about/about-img1.png" />
+                  <img src="/client/img/all-images/about/about-img1.png" />
                 </div>
                 <div className="author-img">
                   <h3>
@@ -233,7 +233,7 @@ const HomePage: React.FC = () => {
       <div
         className="properties-section-area sp2"
         style={{
-          backgroundImage: "url(//client/img/all-images/bg/bg1.png)",
+          backgroundImage: "url(/client/img/all-images/bg/bg1.png)",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -458,7 +458,7 @@ const HomePage: React.FC = () => {
                                                 )
                                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                                 : property.main_image_path
-                                              : "//client/img/property-placeholder-image.png" // Fallback image
+                                              : "/client/img/property-placeholder-image.png" // Fallback image
                                           }
                                           alt={property.name} style={{ height: '400px', objectFit: 'cover' }} 
                                         />
@@ -501,7 +501,7 @@ const HomePage: React.FC = () => {
                                             style={{ cursor: "pointer" }}
                                           >
                                             <img
-                                              src="//client/img/icons/bed1.svg"
+                                              src="/client/img/icons/bed1.svg"
                                               alt="bed"
                                             />
                                             x{property.total_bedrooms}
@@ -510,7 +510,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bath1.svg"
+                                              src="/client/img/icons/bath1.svg"
                                               alt="bath"
                                             />
                                             x{property.total_bathrooms}
@@ -519,7 +519,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/sqare1.svg"
+                                              src="/client/img/icons/sqare1.svg"
                                               alt="size"
                                             />
                                             {property.plot_size}
@@ -538,8 +538,8 @@ const HomePage: React.FC = () => {
                                           {property.property_price.toLocaleString()}
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
-                                        <img src="//client/img/icons/heart1.svg" className="heart1" alt="like" />
-                                        <img src="//client/img/icons/heart2.svg" alt="liked" className="heart2" />
+                                        <img src="/client/img/icons/heart1.svg" className="heart1" alt="like" />
+                                        <img src="/client/img/icons/heart2.svg" alt="liked" className="heart2" />
                                       </a> */}
                                       </div>
                                     </div>
@@ -618,7 +618,7 @@ const HomePage: React.FC = () => {
                                                 )
                                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                                 : property.main_image_path
-                                              : "//client/img/property-placeholder-image.png" // Fallback image
+                                              : "/client/img/property-placeholder-image.png" // Fallback image
                                           }
                                           alt={property.name} style={{ height: '400px', objectFit: 'cover' }} 
                                         />
@@ -654,7 +654,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bed1.svg"
+                                              src="/client/img/icons/bed1.svg"
                                               alt="bed"
                                             />
                                             x{property.total_bedrooms}
@@ -663,7 +663,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bath1.svg"
+                                              src="/client/img/icons/bath1.svg"
                                               alt="bath"
                                             />
                                             x{property.total_bathrooms}
@@ -672,7 +672,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/sqare1.svg"
+                                              src="/client/img/icons/sqare1.svg"
                                               alt="size"
                                             />
                                             {property.plot_size}
@@ -692,12 +692,12 @@ const HomePage: React.FC = () => {
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
                                         <img
-                                          src="//client/img/icons/heart1.svg"
+                                          src="/client/img/icons/heart1.svg"
                                           className="heart1"
                                           alt="like"
                                         />
                                         <img
-                                          src="//client/img/icons/heart2.svg"
+                                          src="/client/img/icons/heart2.svg"
                                           alt="liked"
                                           className="heart2"
                                         />
@@ -776,7 +776,7 @@ const HomePage: React.FC = () => {
                                                 )
                                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                                 : property.main_image_path
-                                              : "//client/img/property-placeholder-image.png" // Fallback image
+                                              : "/client/img/property-placeholder-image.png" // Fallback image
                                           }
                                           alt={property.name} style={{ height: '400px', objectFit: 'cover' }} 
                                         />
@@ -812,7 +812,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bed1.svg"
+                                              src="/client/img/icons/bed1.svg"
                                               alt="bed"
                                             />
                                             x{property.total_bedrooms}
@@ -821,7 +821,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bath1.svg"
+                                              src="/client/img/icons/bath1.svg"
                                               alt="bath"
                                             />
                                             x{property.total_bathrooms}
@@ -830,7 +830,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/sqare1.svg"
+                                              src="/client/img/icons/sqare1.svg"
                                               alt="size"
                                             />
                                             {property.plot_size}
@@ -850,12 +850,12 @@ const HomePage: React.FC = () => {
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
                                         <img
-                                          src="//client/img/icons/heart1.svg"
+                                          src="/client/img/icons/heart1.svg"
                                           className="heart1"
                                           alt="like"
                                         />
                                         <img
-                                          src="//client/img/icons/heart2.svg"
+                                          src="/client/img/icons/heart2.svg"
                                           alt="liked"
                                           className="heart2"
                                         />
@@ -932,7 +932,7 @@ const HomePage: React.FC = () => {
                                                 )
                                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                                 : property.main_image_path
-                                              : "//client/img/property-placeholder-image.png" // Fallback image
+                                              : "/client/img/property-placeholder-image.png" // Fallback image
                                           }
                                           alt={property.name} style={{ height: '400px', objectFit: 'cover' }} 
                                         />
@@ -968,7 +968,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bed1.svg"
+                                              src="/client/img/icons/bed1.svg"
                                               alt="bed"
                                             />
                                             x{property.total_bedrooms}
@@ -977,7 +977,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bath1.svg"
+                                              src="/client/img/icons/bath1.svg"
                                               alt="bath"
                                             />
                                             x{property.total_bathrooms}
@@ -986,7 +986,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/sqare1.svg"
+                                              src="/client/img/icons/sqare1.svg"
                                               alt="size"
                                             />
                                             {property.plot_size}
@@ -1006,12 +1006,12 @@ const HomePage: React.FC = () => {
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
                                         <img
-                                          src="//client/img/icons/heart1.svg"
+                                          src="/client/img/icons/heart1.svg"
                                           className="heart1"
                                           alt="like"
                                         />
                                         <img
-                                          src="//client/img/icons/heart2.svg"
+                                          src="/client/img/icons/heart2.svg"
                                           alt="liked"
                                           className="heart2"
                                         />
@@ -1088,7 +1088,7 @@ const HomePage: React.FC = () => {
                                                 )
                                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                                 : property.main_image_path
-                                              : "//client/img/property-placeholder-image.png" // Fallback image
+                                              : "/client/img/property-placeholder-image.png" // Fallback image
                                           }
                                           alt={property.name} style={{ height: '400px', objectFit: 'cover' }} 
                                         />
@@ -1124,7 +1124,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bed1.svg"
+                                              src="/client/img/icons/bed1.svg"
                                               alt="bed"
                                             />
                                             x{property.total_bedrooms}
@@ -1133,7 +1133,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bath1.svg"
+                                              src="/client/img/icons/bath1.svg"
                                               alt="bath"
                                             />
                                             x{property.total_bathrooms}
@@ -1142,7 +1142,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/sqare1.svg"
+                                              src="/client/img/icons/sqare1.svg"
                                               alt="size"
                                             />
                                             {property.plot_size}
@@ -1162,12 +1162,12 @@ const HomePage: React.FC = () => {
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
                                         <img
-                                          src="//client/img/icons/heart1.svg"
+                                          src="/client/img/icons/heart1.svg"
                                           className="heart1"
                                           alt="like"
                                         />
                                         <img
-                                          src="//client/img/icons/heart2.svg"
+                                          src="/client/img/icons/heart2.svg"
                                           alt="liked"
                                           className="heart2"
                                         />
@@ -1244,7 +1244,7 @@ const HomePage: React.FC = () => {
                                                 )
                                                 ? `${COMPANY_PRIMARY_DOMAIN_URL}${property.main_image_path}`
                                                 : property.main_image_path
-                                              : "//client/img/property-placeholder-image.png" // Fallback image
+                                              : "/client/img/property-placeholder-image.png" // Fallback image
                                           }
                                           alt={property.name} style={{ height: '400px', objectFit: 'cover' }} 
                                         />
@@ -1280,7 +1280,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bed1.svg"
+                                              src="/client/img/icons/bed1.svg"
                                               alt="bed"
                                             />
                                             x{property.total_bedrooms}
@@ -1289,7 +1289,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/bath1.svg"
+                                              src="/client/img/icons/bath1.svg"
                                               alt="bath"
                                             />
                                             x{property.total_bathrooms}
@@ -1298,7 +1298,7 @@ const HomePage: React.FC = () => {
                                         <li>
                                           <a href="#">
                                             <img
-                                              src="//client/img/icons/sqare1.svg"
+                                              src="/client/img/icons/sqare1.svg"
                                               alt="size"
                                             />
                                             {property.plot_size}
@@ -1318,12 +1318,12 @@ const HomePage: React.FC = () => {
                                         </a>
                                         {/* <a href="javascript:void(0)" className="heart">
                                         <img
-                                          src="//client/img/icons/heart1.svg"
+                                          src="/client/img/icons/heart1.svg"
                                           className="heart1"
                                           alt="like"
                                         />
                                         <img
-                                          src="//client/img/icons/heart2.svg"
+                                          src="/client/img/icons/heart2.svg"
                                           alt="liked"
                                           className="heart2"
                                         />
@@ -1361,7 +1361,7 @@ const HomePage: React.FC = () => {
             <div className="col-lg-4 col-md-6">
               <div className="project-featured-box">
                 <div className="img1">
-                  <img src="//client/img/all-images/project/project-img1.png" />
+                  <img src="/client/img/all-images/project/project-img1.png" />
                 </div>
                 <div className="space40"></div>
                 <div className="btn-area">
@@ -1373,7 +1373,7 @@ const HomePage: React.FC = () => {
             <div className="col-lg-4 col-md-6">
               <div className="project-featured-box">
                 <div className="img1">
-                  <img src="//client/img/all-images/project/project-img2.png" />
+                  <img src="/client/img/all-images/project/project-img2.png" />
                 </div>
                 <div className="space40"></div>
                 <div className="btn-area">
@@ -1385,7 +1385,7 @@ const HomePage: React.FC = () => {
             <div className="col-lg-4 col-md-6">
               <div className="project-featured-box">
                 <div className="img1">
-                  <img src="//client/img/all-images/project/project-img3.png" />
+                  <img src="/client/img/all-images/project/project-img3.png" />
                 </div>
                 <div className="space40"></div>
                 <div className="btn-area">
@@ -1402,7 +1402,7 @@ const HomePage: React.FC = () => {
       <div
         className="items-section-area sp1"
         style={{
-          backgroundImage: "url(//client/img/all-images/bg/bg2.png)",
+          backgroundImage: "url(/client/img/all-images/bg/bg2.png)",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -1506,7 +1506,7 @@ const HomePage: React.FC = () => {
                                       )
                                       ? `${COMPANY_PRIMARY_DOMAIN_URL}${priceHistory[0].imagePath}`
                                       : priceHistory[0].imagePath
-                                    : "//client/img/property-placeholder-image.png" // Fallback image
+                                    : "/client/img/property-placeholder-image.png" // Fallback image
                                 }
                                 style={{ width: '350px', height: '350px', objectFit: 'cover', borderRadius: 14 }} 
                               />

@@ -11,7 +11,7 @@ const Error404Page: React.FC = () => {
         ]}
         title="Page Not Found"
       />
-    <div className="mission-section-area sp1" style={{ backgroundImage:"url(src//client/img/all-images/bg/bg1.png)", backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundSize:"cover", }}>
+    <div className="mission-section-area sp1" style={{ backgroundImage:"url(/client/img/all-images/bg/bg1.png)", backgroundPosition:"center", backgroundRepeat:"no-repeat", backgroundSize:"cover", }}>
     <div className="container">
       <div className="row">
         <div className="col-lg-6 m-auto">

@@ -24,23 +24,23 @@ if(isClient){
 
   // Client-specific scripts
   const clientScripts = [
-    "//client/js/plugins/bootstrap.min.js",
-    "//client/js/plugins/fontawesome.js",
-    "//client/js/plugins/aos.js",
-    "//client/js/plugins/counter.js",
-    "//client/js/plugins/gsap.min.js",
-    "//client/js/plugins/ScrollTrigger.min.js",
-    "//client/js/plugins/Splitetext.js",
-    "//client/js/plugins/sidebar.js",
-    "//client/js/plugins/swiper-slider.js",
-    "//client//js/plugins/magnific-popup.js",
-    "//client/js/plugins/mobilemenu.js",
-    "//client/js/plugins/owlcarousel.min.js",
-    "//client/js/plugins/nice-select.js",
-    "//client/js/plugins/waypoints.js",
-    "//client/js/plugins/slick-slider.js",
-    "//client/js/plugins/circle-progress.js",
-    "//client/js/main.js",
+    "/client/js/plugins/bootstrap.min.js",
+    "/client/js/plugins/fontawesome.js",
+    "/client/js/plugins/aos.js",
+    "/client/js/plugins/counter.js",
+    "/client/js/plugins/gsap.min.js",
+    "/client/js/plugins/ScrollTrigger.min.js",
+    "/client/js/plugins/Splitetext.js",
+    "/client/js/plugins/sidebar.js",
+    "/client/js/plugins/swiper-slider.js",
+    "/client//js/plugins/magnific-popup.js",
+    "/client/js/plugins/mobilemenu.js",
+    "/client/js/plugins/owlcarousel.min.js",
+    "/client/js/plugins/nice-select.js",
+    "/client/js/plugins/waypoints.js",
+    "/client/js/plugins/slick-slider.js",
+    "/client/js/plugins/circle-progress.js",
+    "/client/js/main.js",
   ];
 
   // Dynamically add styles
@@ -52,7 +52,7 @@ if(isClient){
   });
 
   const specialScript = document.createElement("script");
-  specialScript.src = "//client/js/plugins/jquery-3-7-1.min.js";
+  specialScript.src = "/client/js/plugins/jquery-3-7-1.min.js";
   document.head.appendChild(specialScript);
 
   // Dynamically add scripts

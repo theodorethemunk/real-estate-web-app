@@ -71,7 +71,7 @@ import { dateToWords } from "../../services/Util/ConvertDateToWords";
         :transactions.map((transaction) => (
           <div className="message-boxarea mb-4">
           <div className="img1">
-            <img src="//client/img/all-images/bank-icon.png" alt="housebox"/>
+            <img src="/client/img/all-images/bank-icon.png" alt="housebox"/>
           </div>
           <div className="conatent-area">
             <div className="content">

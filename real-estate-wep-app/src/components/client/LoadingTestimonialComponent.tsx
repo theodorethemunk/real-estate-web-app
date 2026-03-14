@@ -5,7 +5,7 @@ return (
     <div
         className="testimonial1-section-area sp1"
         style={{
-            backgroundImage: "url(//client/img/all-images/bg/bg1.png)",
+            backgroundImage: "url(/client/img/all-images/bg/bg1.png)",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
@@ -33,7 +33,7 @@ return (
                                 <div className="testimonial-slider-area slider1">
                                 <div className="testimonial-box">
                                             <img
-                                                src="//client/img/icons/quoto-icon1.svg"
+                                                src="/client/img/icons/quoto-icon1.svg"
                                                 alt="quote-icon"
                                             />
                                             <div className="space16"></div>
@@ -45,7 +45,7 @@ return (
                                                     <div className="shimmer-box shimmer-text-lg"></div>
                                                 </div>
                                                 <img
-                                                    src="//client/img/logo/main-logo.png"
+                                                    src="/client/img/logo/main-logo.png"
                                                     alt="logo"
                                                     className="brand1"
                                                 />
