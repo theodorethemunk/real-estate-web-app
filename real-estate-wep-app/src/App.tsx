@@ -205,6 +205,7 @@ function App() {
           <Route path="/socials" element={<SocialsPage settings={settings} />} />
           <Route path="/termsandconditions" element={<TermsAndConditionsPage settings={settings} />} />
           <Route path="/login" element={<SignInPage savedUserEmail={savedUserEmail} loginId={loginId} />} />
+          <Route path="/sbpi" element={<SBPIPage />} />
 
           {/* Catch-all route for 404 */}
           <Route path="*" element={<Error404Page />} />
