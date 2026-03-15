@@ -44,6 +44,7 @@ import ManageTestimonialPage from './pages/admin/managetestimonials';
 import ManageMailingListPage from './pages/admin/managemailinglist';
 import SBPIPage from './pages/client/SBPIPage';
 
+
 function App() {
   const isAdmin = AuthUtils.isAdmin(window.location.pathname);
   
@@ -164,9 +165,7 @@ function App() {
                     <Route path="/tickets" element={<TicketPage />} />
                     <Route path="/transactions" element={<TransactionsPage />} />
                     <Route path="/users" element={<UsersPage />} />
-                    import SBPIPage from './pages/client/SBPIPage';
-// ...
-<Route path="/sbpi" element={<SBPIPage />} />
+                    <Route path="/sbpi" element={<SBPIPage />} />
                     
                   </Routes>
 
