@@ -42,7 +42,7 @@ import "../src/shimmer.css";
 import "../src/general.css";
 import ManageTestimonialPage from './pages/admin/managetestimonials';
 import ManageMailingListPage from './pages/admin/managemailinglist';
-import SBPIPage from './pages/client/sbpi';
+import SBPIPage from './pages/client/SBPIPage';
 
 function App() {
   const isAdmin = AuthUtils.isAdmin(window.location.pathname);
