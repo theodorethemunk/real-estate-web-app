@@ -164,7 +164,7 @@ function App() {
                     <Route path="/tickets" element={<TicketPage />} />
                     <Route path="/transactions" element={<TransactionsPage />} />
                     <Route path="/users" element={<UsersPage />} />
-                    import SBPIPage from './pages/client/sbpi';
+                    import SBPIPage from './pages/client/SBPIPage';
 // ...
 <Route path="/sbpi" element={<SBPIPage />} />
                     
