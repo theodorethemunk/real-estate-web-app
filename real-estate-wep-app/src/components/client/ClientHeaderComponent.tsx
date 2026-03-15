@@ -28,21 +28,21 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
   }, [searchParams]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent page reload
+    e.preventDefault();
     if (searchTerm.trim()) {
       navigate(`/listing?search=${encodeURIComponent(searchTerm)}`);
     } else {
-      navigate("/listing"); // Redirect without query if empty
+      navigate("/listing");
     }
   };
   
-    const gotoHome = () => {
-      navigate("/home");
-    };
+  const gotoHome = () => {
+    navigate("/home");
+  };
 
   const handleSignOut = () => {
     removeLoginSession();
-    window.location.href = "/home"; // Force reload and navigate to home
+    window.location.href = "/home";
   };
 
   return (
@@ -85,15 +85,32 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                 </div>
                 <div className="header-elements">
                   <div className="site-logo">
-                    <img src="/client/img/logo/main-logo.png" alt="main-logo" onClick={() => gotoHome()}  />
+                    <img src="/client/img/logo/main-logo.png" alt="main-logo" onClick={() => gotoHome()} />
                   </div>
                   <div className="main-menu">
                     <ul>
-                      <li><a onClick={() => gotoHome()}  className="plus">Home</a></li>
+                      <li><a onClick={() => gotoHome()} className="plus">Home</a></li>
                       <li><a href="/listing" className="plus">Properties</a></li>
                       <li><a href="/careers" className="plus">Careers</a></li>
                       <li><a href="/pricehistory" className="plus">Price History</a></li>
                       <li><a href="/helpcenter" className="plus">Help Center</a></li>
+                      {/* SBPI Program Dropdown */}
+                      <li className="nav-item dropdown">
+                        <a
+                          href="/sbpi"
+                          className="nav-link dropdown-toggle plus"
+                          id="sbpiDropdown"
+                          role="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Programs <i className="fa-solid fa-angle-down"></i>
+                        </a>
+                        <ul className="dropdown-menu" aria-labelledby="sbpiDropdown">
+                          <li><a className="dropdown-item" href="/sbpi">SBPI Program</a></li>
+                          <li><a className="dropdown-item" href="/sbpi#p2p">Profit 2 Property</a></li>
+                        </ul>
+                      </li>
                       {isValidEmail(savedUserEmail) && loginId && (
                         <li className="nav-item dropdown">
                           <a
@@ -110,12 +127,10 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                             <li><a className="dropdown-item" href="/profile">Profile</a></li>
                             <li><a className="dropdown-item" href="/myproperties">My Properties</a></li>
                             <li><a className="dropdown-item" href="/mytransactions">My Transactions</a></li>
-                            {/* <li><a className="dropdown-item" href="/myfavorites">My Favourites</a></li> */}
                             <li><hr className="dropdown-divider" /></li>
                             <li><button className="dropdown-item text-danger" onClick={handleSignOut}>Log Out</button></li>
                           </ul>
                         </li>
-
                       )}
                     </ul>
                   </div>
@@ -152,7 +167,6 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                       <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"></path>
                     </svg>
                   </a></div>
-
                 <div className="mobile-nav-icon dots-menu">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M3 4H21V6H3V4ZM7 19H21V21H7V19ZM3 14H21V16H3V14ZM7 9H21V11H7V9Z"></path>
@@ -177,11 +191,19 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
         </div>
         <div className="mobile-nav mobile-nav1">
           <ul className="mobile-nav-list nav-list1">
-            <li><a href="/home">Home </a></li>
-            <li><a href="listing">Properties </a></li>
-            <li><a href="/careers">Careers </a></li>
-            <li><a href="/pricehistory">Price History </a></li>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/listing">Properties</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/pricehistory">Price History</a></li>
             <li><a href="/helpcenter">Help Center</a></li>
+            {/* SBPI Programs in mobile menu */}
+            <li>
+              <a href="#" className="plus">Programs</a>
+              <ul className="sub-menu">
+                <li><a href="/sbpi">SBPI Program</a></li>
+                <li><a href="/sbpi">Profit 2 Property</a></li>
+              </ul>
+            </li>
             {isValidEmail(savedUserEmail) && loginId ? (
               <li>
                 <a href="#" className="plus">Account</a>
@@ -189,7 +211,6 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                   <li><a href="/profile">Profile</a></li>
                   <li><a href="/myproperties">My Properties</a></li>
                   <li><a href="/mytransactions">My Transactions</a></li>
-                  {/* <li><a href="/myfavorites">My Favourites</a></li> */}
                   <li><a onClick={handleSignOut}>Log Out</a></li>
                 </ul>
               </li>
@@ -223,7 +244,6 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                     </a>
                   </div>
                 </div>
-
                 <div className="contact-info-single">
                   <div className="contact-info-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -236,11 +256,8 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                     </a>
                   </div>
                 </div>
-
-
                 <div className="single-footer">
                   <h3>Our Location</h3>
-
                   <div className="contact-info-single">
                     <div className="contact-info-icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -251,11 +268,9 @@ const ClientHeaderComponent: React.FC<{ settings: Setting[], savedUserEmail: str
                       <a href="#">{companyAddressSettings?.context}</a>
                     </div>
                   </div>
-
                 </div>
                 <div className="single-footer">
                   <h3>Social Links</h3>
-
                   <div className="social-links-mobile-menu">
                     <ul>
                       <li><a href={facebookPageSettings?.context}><i className="fa-brands fa-facebook-f"></i></a></li>
