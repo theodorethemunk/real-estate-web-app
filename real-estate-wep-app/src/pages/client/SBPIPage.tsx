@@ -137,7 +137,7 @@ const SBPIPage: React.FC = () => {
                 <p style={{ margin: 0, opacity: 0.9, fontSize: "16px" }}>Salary Bridge Property Investment</p>
               </div>
               <div style={{ padding: "32px" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", alignItems: "center", marginBottom: "32px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", alignItems: "center", marginBottom: "32px" }}>
                   <div>
                     <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#444", marginBottom: "20px" }}>
                       A smart initiative designed to help companies make property ownership accessible and stress-free for their employees.
