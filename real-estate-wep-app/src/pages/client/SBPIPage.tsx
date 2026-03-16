@@ -270,7 +270,7 @@ const SBPIPage: React.FC = () => {
                       <h4 style={{ color: "#c0392b", marginTop: 0, marginBottom: "24px", fontSize: "16px", textTransform: "uppercase", letterSpacing: "1px" }}>
                         Section 1: Worker's Profile
                       </h4>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
                         {[
                           { label: "Full Name *", name: "fullName", type: "text", colSpan: 2 },
                           { label: "Date of Birth *", name: "dateOfBirth", type: "date" },
@@ -345,7 +345,7 @@ const SBPIPage: React.FC = () => {
                       <h4 style={{ color: "#c0392b", marginTop: 0, marginBottom: "24px", fontSize: "16px", textTransform: "uppercase", letterSpacing: "1px" }}>
                         Section 2: ID & Employment Details
                       </h4>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
                         {[
                           { label: "ID Type (e.g. Passport, Driver's License)", name: "idType", type: "text" },
                           { label: "ID Number", name: "idNumber", type: "text" },
@@ -417,7 +417,7 @@ const SBPIPage: React.FC = () => {
                       <h4 style={{ color: "#c0392b", marginTop: 0, marginBottom: "24px", fontSize: "16px", textTransform: "uppercase", letterSpacing: "1px" }}>
                         Section 3: Parent / Guardian Information
                       </h4>
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "16px" }}>
                         {[
                           { label: "Full Name", name: "guardianName", type: "text" },
                           { label: "Relationship", name: "guardianRelationship", type: "text" },
@@ -557,7 +557,7 @@ const SBPIPage: React.FC = () => {
                 <p style={{ margin: 0, opacity: 0.9, fontSize: "16px" }}>For Market Women & Traders</p>
               </div>
               <div style={{ padding: "32px" }}>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px", alignItems: "center", marginBottom: "32px" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "32px", alignItems: "center", marginBottom: "32px" }}>
                   <div>
                     <p style={{ fontSize: "16px", lineHeight: "1.8", color: "#444", marginBottom: "20px" }}>
                       A simple initiative designed for market women and traders to make property ownership easy and achievable by redirecting daily Akawo contributions and business profits into real estate savings.
