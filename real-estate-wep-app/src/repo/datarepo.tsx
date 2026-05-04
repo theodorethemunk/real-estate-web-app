@@ -1,4 +1,6 @@
-export const API_BASE_URL = "https://real-estate-api-production-ac3a.up.railway.app/api";
-export const UPLOAD_URL = "https://real-estate-api-production-ac3a.up.railway.app";
-export const API_URL = "https://real-estate-api-production-ac3a.up.railway.app";
-export const COMPANY_PRIMARY_DOMAIN_URL = "https://real-estate-api-production-ac3a.up.railway.app/";
+export const SUPABASE_URL = "https://vftmhrgtjdgprgrfkyxj.supabase.co"
+export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZmdG1ocmd0amRncHJncmZreXhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5MTk0NDEsImV4cCI6MjA5MzQ5NTQ0MX0.xZYvGBMylB5JxqH4aMYG99KhSb0h5Jo9GV89tlsUFIU"
+export const API_BASE_URL = ""
+export const UPLOAD_URL = ""
+export const API_URL = ""
+export const COMPANY_PRIMARY_DOMAIN_URL = ""

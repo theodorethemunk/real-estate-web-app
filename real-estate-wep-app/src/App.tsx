@@ -45,6 +45,7 @@ import ManageMailingListPage from './pages/admin/managemailinglist';
 import SBPIPage from './pages/client/SBPIPage';
 
 
+
 function App() {
   const isAdmin = AuthUtils.isAdmin(window.location.pathname);
   
@@ -166,6 +167,7 @@ function App() {
                     <Route path="/transactions" element={<TransactionsPage />} />
                     <Route path="/users" element={<UsersPage />} />
                     <Route path="/sbpi" element={<SBPIPage />} />
+                    case 'admindashboard': return <AdminDashboard />
                     
                   </Routes>
 
@@ -206,6 +208,7 @@ function App() {
           <Route path="/termsandconditions" element={<TermsAndConditionsPage settings={settings} />} />
           <Route path="/login" element={<SignInPage savedUserEmail={savedUserEmail} loginId={loginId} />} />
           <Route path="/sbpi" element={<SBPIPage />} />
+          
 
           {/* Catch-all route for 404 */}
           <Route path="*" element={<Error404Page />} />

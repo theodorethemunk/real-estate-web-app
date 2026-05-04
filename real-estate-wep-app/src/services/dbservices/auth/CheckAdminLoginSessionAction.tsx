@@ -1,15 +1,13 @@
-import { API_BASE_URL } from "../../../repo/datarepo";
+import { supabase } from '../../../supabaseClient'
 
-export const checkSession = async () => {
-  try {
-    const response = await fetch(`${API_BASE_URL}/adminprofile/check-session`, {
-      method: "GET",
-      credentials: "include",
-    });
-    const data = await response.json();
-    console.log("Session Response Check:", data); 
-    return data.success;
-  } catch {
-    return false;
-  }
-};
+export const CheckAdminLoginSessionAction = async (): Promise<boolean> => {
+  const { data } = await supabase.auth.getSession()
+  if (!data.session) return false
+  const user = data.session.user
+  const { data: adminData } = await supabase
+    .from('admin_users')
+    .select('*')
+    .eq('id', user.id)
+    .single()
+  return !!adminData
+}

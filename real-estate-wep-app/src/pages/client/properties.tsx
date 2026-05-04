@@ -1,29 +1,28 @@
-import { useEffect, useState } from "react";
-import HeroComponentLite from "../../components/client/HeroLite";
-import { IProperty } from "../../models/interfaces/PropertyInterface";
-import { fetchUsersProperties } from "../../services/dbservices/user/FetchUsersProperties";
-import { dateToWords } from "../../services/Util/ConvertDateToWords";
-import { COMPANY_PRIMARY_DOMAIN_URL } from "../../repo/datarepo";
+import { useState, useEffect } from 'react'
+import { supabase } from '../../supabaseClient'
 
+export default function Listings() {
+  const [properties, setProperties] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
 
-const MyPropertiesPage: React.FC<{ savedUserId: string }> = ({ savedUserId }) => {
-  const [loading, setLoading] = useState(true);
-  const [myProperties, setMyProperties] = useState<IProperty[]>([]);
+  useEffect(() => {
+    fetchProperties()
+  }, [])
 
-  useEffect(() => {    
-    getMyProperties();
-  }, [savedUserId]);
+  const fetchProperties = async () => {
+    const { data } = await supabase
+      .from('properties')
+      .select('*, property_images(*), agents(*)')
+      .order('created_at', { ascending: false })
+    if (data) setProperties(data)
+    setLoading(false)
+  }
 
-  const getMyProperties = async () => {
-    if (!savedUserId || savedUserId == "0") {
-      return;
-    }
-
-    setLoading(true);
-    const fetchedProperties = await fetchUsersProperties(savedUserId);
-    setMyProperties(fetchedProperties);
-    setLoading(false);
-  };
+  if (loading) return (
+    <div style={{ padding: '120px 5%', textAlign: 'center', color: '#C9A84C' }}>
+      Loading properties...
+    </div>
+  )
 
   return (
     <>
@@ -120,4 +119,3 @@ const MyPropertiesPage: React.FC<{ savedUserId: string }> = ({ savedUserId }) =>
   );
 };
 
-export default MyPropertiesPage;

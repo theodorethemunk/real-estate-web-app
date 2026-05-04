@@ -1,149 +1,88 @@
-import Swal from "sweetalert2";
-import { API_BASE_URL } from "../../../repo/datarepo";
-import { AuthInterface } from "../../../models/interfaces/AuthInterface";
-import { generateCode } from "../../Util/NumberGenerator";
-import { IUserProfile } from "../../../models/interfaces/IUserProfile";
+import { supabase } from '../../../supabaseClient'
+import Swal from 'sweetalert2'
 
-
-export const SignUpAction = async (formData: AuthInterface): Promise<string> => {
-  console.log("Signing Up: ", JSON.stringify(formData));
-
+export const SignUpAction = async (formData: any): Promise<string> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/userprofile/register`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    });
-
-    const result = await response.text();
-    if (!response.ok)
-    {
-      //throw new Error(result);
-      return result;
-    };
-
-    Swal.fire({
-      icon: "success",
-      title: "Welcome Onboard!",
-      text: "Your account has been created successfully",
-    });
-
-    return "success";
+    const { error } = await supabase.auth.signUp({
+      email: formData.email,
+      password: formData.password,
+    })
+    if (error) return error.message
+    Swal.fire({ icon: 'success', title: 'Welcome Onboard!', text: 'Your account has been created successfully' })
+    return 'success'
   } catch (error) {
-    console.log("Error: " + error);
-    return "Failed to create your acccount: " + error;
+    return 'Something went wrong'
   }
-};
+}
 
+export const SignInAction = async (formData: any): Promise<string> => {
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: formData.email,
+      password: formData.password,
+    })
+    if (error) return error.message
+    const isAdmin = data.user?.email === 'Sannioladimeji2003@gmail.com'
+    localStorage.setItem('user', JSON.stringify({ ...data.user, isAdmin }))
+    return 'success'
+  } catch (error) {
+    return 'Something went wrong'
+  }
+}
+
+export const SignOutAction = async () => {
+  await supabase.auth.signOut()
+  localStorage.removeItem('user')
+}
+export const ResetPasswordAction = async (email: string): Promise<string> => {
+  try {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/resetpassword'
+    })
+    if (error) return error.message
+    Swal.fire({ icon: 'success', title: 'Email Sent!', text: 'Check your email for the reset link' })
+    return 'success'
+  } catch (error) {
+    return 'Something went wrong'
+  }
+}
+export const ForgotPasswordAction = async (email: string): Promise<string> => {
+  try {
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: window.location.origin + '/resetpassword'
+    })
+    if (error) return error.message
+    Swal.fire({ icon: 'success', title: 'Email Sent!', text: 'Check your email for the password reset link' })
+    return 'success'
+  } catch (error) {
+    return 'Something went wrong'
+  }
+}
 export const GetSignUpVerificationCodeAction = async (email: string): Promise<string> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/userprofile/check-v-code?email=${encodeURIComponent(email)}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    if (!response.ok) {
-      return "";
-    }
-
-    const vCode = await response.text();
-    return vCode;
-
+    const { error } = await supabase.auth.resend({
+      type: 'signup',
+      email: email
+    })
+    if (error) return error.message
+    Swal.fire({ icon: 'success', title: 'Code Sent!', text: 'Check your email for the verification code' })
+    return 'success'
   } catch (error) {
-    console.error("Error fetching verification code:", error);
-    return "";
+    return 'Something went wrong'
   }
-};
+}
 
-
-export const VerifyEmailAction = async (email: string) => {
+export const VerifyEmailAction = async (token: string, email: string): Promise<string> => {
   try {
-    await fetch(`${API_BASE_URL}/userprofile/approve-user-email?email=${encodeURIComponent(email)}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    Swal.fire({
-      icon: "success",
-      title: "Email Verified!",
-      text: "Your email has been successfully verified.",
-    });
-
+    const { error } = await supabase.auth.verifyOtp({
+      email: email,
+      token: token,
+      type: 'signup'
+    })
+    if (error) return error.message
+    Swal.fire({ icon: 'success', title: 'Email Verified!', text: 'Your email has been verified successfully' })
+    return 'success'
   } catch (error) {
-    console.error("Error verifying email:", error);
+    return 'Something went wrong'
   }
-};
-
-export const ForgotPasswordAction = async (email: string) => {
-
-  const vCode = generateCode();
-
-  try {
-    await fetch(`${API_BASE_URL}/userprofile/forgot-password?email=${encodeURIComponent(email)}&vcode=${encodeURIComponent(vCode)}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-    });
-
-  } catch (error) {
-    console.error("Error verifying email:", error);
-  }
-};
-
-export const ResetPasswordAction = async (email: string, password: string, accessToken: string) => {
-
-  const vCode = generateCode();
-
-  try {
-    await fetch(`${API_BASE_URL}/userprofile/reset-password?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&vcode=${encodeURIComponent(vCode)}&access_token=${encodeURIComponent(accessToken)}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-    });
-
-  } catch (error) {
-    console.error("Error updating password:", error);
-  }
-};
-
-export const SignInAction = async (email: string, password: string): Promise<IUserProfile | null> => {
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/userprofile/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-      const errorMessage = await response.text();
-      throw new Error(errorMessage); // Throw an Error object
-    }
-
-    const userProfile: IUserProfile = await response.json();
-    return userProfile;
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error("Login failed:", error.message);
-    } else {
-      console.error("An unknown error occurred:", error);
-    }
-    return null; // Return null on failure
-  }
-};
-
-export const ChangePasswordAction = async (email: string, password: string): Promise<string> => {
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/userprofile/change-password`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
-    });
-
-    const result = await response.text();
-    if (!response.ok) throw new Error(result);
-
-    return "success";
-  } catch (error) {
-    return "Failed to resend verification code";
-  }
-};
+}
