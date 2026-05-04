@@ -52,7 +52,7 @@ const UpdateProfilePasswordComponent: React.FC<Props> = ({ userProfile }) => {
         return;
       }
     
-      await ResetPasswordAction(userProfile?.email ?? "", formData.password, userProfile?.temp_pin ?? "");
+     await ResetPasswordAction(userProfile?.email ?? "", formData.password);
       
       setFormData({
         old_password: "",

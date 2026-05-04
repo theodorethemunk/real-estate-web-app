@@ -101,7 +101,7 @@ const ResetPasswordPage: React.FC<{ savedUserEmail: string, loginId: string }> =
         return;
       }
     
-      await ResetPasswordAction(email, formData.password, vCode);
+      await ResetPasswordAction(email, formData.password);
       
       setFormData({
         password: "",

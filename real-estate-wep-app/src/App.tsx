@@ -167,7 +167,7 @@ function App() {
                     <Route path="/transactions" element={<TransactionsPage />} />
                     <Route path="/users" element={<UsersPage />} />
                     <Route path="/sbpi" element={<SBPIPage />} />
-                    case 'admindashboard': return <AdminDashboard />
+                    
                     
                   </Routes>
 
