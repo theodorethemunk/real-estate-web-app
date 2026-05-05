@@ -51,7 +51,7 @@ function App() {
   
   const navigate = useNavigate();
 
-  const [settings, setSettings] = useState<Setting>(defaultSetting);
+  const [settings, setSettings] = useState<Setting[]>([defaultSetting]);
   const [, setLoading] = useState<boolean>(true);
   const [, setError] = useState<string>("");
   const [savedUserEmail, setUserEmail] = useState<string>("");
@@ -108,7 +108,7 @@ function App() {
         
 
         const data = await fetchCompanyInfo();
-        setSettings(data);       
+setSettings([data]);       
 
       } catch (err) {
         setError("Failed to load settings");
