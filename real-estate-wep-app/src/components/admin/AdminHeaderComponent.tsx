@@ -36,20 +36,20 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
     }
   };
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-    
-    const body = document.documentElement;
-    
-    if (!menuOpen) {
-      body.setAttribute('data-sidebar-size', 'lg');
-      document.body.classList.add('vertical-sidebar-enable');
-    } else {
-      body.removeAttribute('data-sidebar-size');
-      document.body.classList.remove('vertical-sidebar-enable');
-    }
-  };
+ const toggleMenu = () => {
+  setMenuOpen(!menuOpen);
+  const body = document.documentElement;
 
+  if (!menuOpen) {
+    body.classList.add('sidebar-enable');
+    document.body.classList.add('vertical-sidebar-enable');
+    body.setAttribute('data-sidebar-size', 'lg');
+  } else {
+    body.classList.remove('sidebar-enable');
+    document.body.classList.remove('vertical-sidebar-enable');
+    body.removeAttribute('data-sidebar-size');
+  }
+};
   return (
     <header id="page-topbar">
       <div className="layout-width">
