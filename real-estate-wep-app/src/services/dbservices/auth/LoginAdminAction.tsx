@@ -1,31 +1,34 @@
 import { AdminProfile } from "../../../models/interfaces/AdminProfile";
-import { API_BASE_URL } from "../../../repo/datarepo";
+import { supabase } from '../../../supabaseClient'
 
 export const loginAdminAction = async (
-    email: string,
-    password: string
-  ): Promise<AdminProfile | null> => {
-    try {
-      const response = await fetch(
-        `${API_BASE_URL}/adminprofile/login?email=${encodeURIComponent(
-          email
-        )}&password=${encodeURIComponent(password)}`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-  
-      if (!response.ok) {
-        throw new Error("Invalid email or password");
-      }
-  
-      const data: AdminProfile = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Login failed:", error);
-      return null;
-    }
-  };
+  email: string,
+  password: string
+): Promise<AdminProfile | null> => {
+  try {
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error || !data.user) return null
+
+    // Check if user is in admin_users table
+    const { data: adminData, error: adminError } = await supabase
+      .from('admin_users')
+      .select('*')
+      .eq('id', data.user.id)
+      .single()
+
+    if (adminError || !adminData) return null
+
+    const adminProfile: AdminProfile = {
+      id: data.user.id as any,
+      email: data.user.email ?? '',
+      phone: adminData.phone ?? '',
+      first_name: adminData.first_name ?? '',
+      last_name: adminData.last_name ?? '',
+    } as any
+
+    return adminProfile
+  } catch (error) {
+    console.error("Login failed:", error)
+    return null
+  }
+}
