@@ -28,7 +28,7 @@ import TermsAndConditionsPage from './pages/client/termsandcondition';
 import { AuthUtils } from './services/state/authUtil';
 import ClientFooterComponent from './components/client/ClientFooterComponent';
 import MyPropertiesPage from './pages/client/properties';
-import { fetchCompanyInfo, Setting } from './services/dbservices/company/FetchCompanyInfo';
+import { fetchCompanyInfo, Setting, defaultSetting } from './services/dbservices/company/FetchCompanyInfo';
 import ForgotPasswordPage from './pages/client/forgotpassword';
 import EmailVerificationPage from './pages/client/emailverification';
 import { getLoginSession } from './services/session/UserLoginSession';
@@ -51,7 +51,7 @@ function App() {
   
   const navigate = useNavigate();
 
-  const [settings, setSettings] = useState<Setting[]>([]);
+  const [settings, setSettings] = useState<Setting>(defaultSetting);
   const [, setLoading] = useState<boolean>(true);
   const [, setError] = useState<string>("");
   const [savedUserEmail, setUserEmail] = useState<string>("");

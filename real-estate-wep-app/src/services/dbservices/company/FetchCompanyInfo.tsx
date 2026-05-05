@@ -1,23 +1,42 @@
 import { supabase } from '../../../supabaseClient'
 
 export interface Setting {
-  id?: string
-  name?: string
-  email?: string
-  phone?: string
-  address?: string
-  logoFilePath?: string
-  bannerFilePath?: string
-  facebookUrl?: string
-  twitterUrl?: string
-  instagramUrl?: string
-  linkedinUrl?: string
-  youtubeUrl?: string
-  aboutUs?: string
-  vision?: string
-  mission?: string
-  context?: string
+  id: string
+  name: string
+  email: string
+  phone: string
+  address: string
+  context: string
+  logo_file_path: string
+  banner_file_path: string
+  facebook_url: string
+  twitter_url: string
+  instagram_url: string
+  linkedin_url: string
+  youtube_url: string
+  about_us: string
+  vision: string
+  mission: string
   [key: string]: any
+}
+
+const defaultSetting: Setting = {
+  id: '',
+  name: 'Sommy Properties Ltd',
+  email: 'info@sommyproperties.com',
+  phone: '+234 000 0000',
+  address: 'Lagos, Nigeria',
+  context: '',
+  logo_file_path: '',
+  banner_file_path: '',
+  facebook_url: '',
+  twitter_url: '',
+  instagram_url: '',
+  linkedin_url: '',
+  youtube_url: '',
+  about_us: '',
+  vision: '',
+  mission: '',
 }
 
 export const fetchCompanyInfo = async (): Promise<Setting> => {
@@ -26,10 +45,10 @@ export const fetchCompanyInfo = async (): Promise<Setting> => {
       .from('company_settings')
       .select('*')
       .single()
-    if (error || !data) return {} as Setting
-    return data as Setting
+    if (error || !data) return defaultSetting
+    return { ...defaultSetting, ...data } as Setting
   } catch (error) {
-    return {} as Setting
+    return defaultSetting
   }
 }
 
