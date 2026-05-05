@@ -9,8 +9,8 @@ interface AdminHeaderPropsComponentProps {
 }
 
 const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminInfo }) => {
-
   const [isValidEmail, setIsValidEmail] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -33,6 +33,20 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
     if (result.isConfirmed) {
       await removeAdminLoginSession();
       navigate("/portalaccess");
+    }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    const sidebar = document.getElementById('scrollbar');
+    const body = document.documentElement;
+    
+    if (!menuOpen) {
+      body.setAttribute('data-sidebar-size', 'lg');
+      document.body.classList.add('vertical-sidebar-enable');
+    } else {
+      body.removeAttribute('data-sidebar-size');
+      document.body.classList.remove('vertical-sidebar-enable');
     }
   };
 
@@ -61,21 +75,20 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
               </a>
             </div>
 
-            {/* Hamburger Menu */}
+            {/* Hamburger Menu - Mobile */}
             <div className="d-block d-lg-none px-3 fs-16 header-item vertical-menu-btn pt-4">
               <img src="/client/img/logo/main-logo.png" alt="logo" height="25" />
             </div>
           </div>
 
           <div className="d-flex align-items-center">
-          <div className="ms-1 header-item d-none d-sm-flex">
-              <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
-                data-toggle="fullscreen">
+            <div className="ms-1 header-item d-none d-sm-flex">
+              <button type="button" className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle">
                 <i className='bx bx-fullscreen fs-22'></i>
               </button>
             </div>
 
-            {isValidEmail  && (
+            {isValidEmail && (
               <>
                 <div className="ms-1 header-item d-none d-sm-flex">
                   <a className="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle light-dark-mode" href="/settings">
@@ -95,12 +108,11 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
               </>
             )}
 
-            
-
             <button
               type="button"
               className="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger"
               id="topnav-hamburger-icon"
+              onClick={toggleMenu}
             >
               <span className="hamburger-icon">
                 <span></span>
