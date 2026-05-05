@@ -20,7 +20,7 @@ export interface Setting {
   [key: string]: any
 }
 
-const defaultSetting: Setting = {
+export const defaultSetting: Setting = {
   id: '',
   name: 'Sommy Properties Ltd',
   email: 'info@sommyproperties.com',
