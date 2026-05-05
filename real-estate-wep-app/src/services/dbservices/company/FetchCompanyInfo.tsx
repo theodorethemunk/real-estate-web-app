@@ -16,18 +16,20 @@ export interface Setting {
   aboutUs?: string
   vision?: string
   mission?: string
+  context?: string
+  [key: string]: any
 }
 
-export const fetchCompanyInfo = async (): Promise<Setting | null> => {
+export const fetchCompanyInfo = async (): Promise<Setting> => {
   try {
     const { data, error } = await supabase
       .from('company_settings')
       .select('*')
       .single()
-    if (error) return null
+    if (error || !data) return {} as Setting
     return data as Setting
   } catch (error) {
-    return null
+    return {} as Setting
   }
 }
 
