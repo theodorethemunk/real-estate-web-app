@@ -1,7 +1,7 @@
 import { supabase } from '../../../supabaseClient'
 import { IUserProfile } from "../../../models/interfaces/IUserProfile";
 
-export const GetUserInfoAction = async (email: string, loginId: string): Promise<IUserProfile | null> => {
+export const GetUserInfoAction = async (_email: string, loginId: string): Promise<IUserProfile | null> => {
   try {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return null
