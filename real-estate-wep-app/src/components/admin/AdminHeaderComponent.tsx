@@ -38,7 +38,7 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    const sidebar = document.getElementById('scrollbar');
+    
     const body = document.documentElement;
     
     if (!menuOpen) {
