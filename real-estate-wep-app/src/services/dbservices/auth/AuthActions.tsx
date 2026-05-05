@@ -19,7 +19,12 @@ export const SignInAction = async (email: string, password: string): Promise<any
   try {
     const { data, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) return error.message
-    return data.user
+    if (!data.user) return 'Incorrect email or password.'
+    return {
+      id: data.user.id,
+      email: data.user.email,
+      sign_in_id: data.session?.access_token ?? ''
+    }
   } catch (error) {
     return 'Something went wrong'
   }

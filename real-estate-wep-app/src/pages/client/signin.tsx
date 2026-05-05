@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { SignInAction } from "../../services/dbservices/auth/AuthActions";
+import { saveLoginSession } from "../../services/session/UserLoginSession";
 import { useNavigate } from "react-router-dom";
 import { isValidEmail } from "../../services/Util/Validator";
 
@@ -67,10 +68,11 @@ const SignInPage: React.FC<{ savedUserEmail: string, loginId: string }> = ({ sav
       return;
     }
 
-    // Save user to localStorage
-    localStorage.setItem("userEmail", formData.email);
-    localStorage.setItem("userId", response.id ?? "");
-    localStorage.setItem("user", JSON.stringify(response));
+    await saveLoginSession(
+      response.id ?? "",
+      formData.email,
+      response.sign_in_id ?? ""
+    );
 
     setLoading(false);
     window.location.href = "/profile";
