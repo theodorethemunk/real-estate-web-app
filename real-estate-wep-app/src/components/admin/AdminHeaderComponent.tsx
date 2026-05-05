@@ -38,16 +38,17 @@ const AdminHeaderComponent: React.FC<AdminHeaderPropsComponentProps> = ({ adminI
 
  const toggleMenu = () => {
   setMenuOpen(!menuOpen);
-  const body = document.documentElement;
-
-  if (!menuOpen) {
-    body.classList.add('sidebar-enable');
-    document.body.classList.add('vertical-sidebar-enable');
-    body.setAttribute('data-sidebar-size', 'lg');
-  } else {
-    body.classList.remove('sidebar-enable');
-    document.body.classList.remove('vertical-sidebar-enable');
-    body.removeAttribute('data-sidebar-size');
+  const appMenu = document.querySelector('.app-menu') as HTMLElement;
+  if (appMenu) {
+    if (!menuOpen) {
+      appMenu.style.display = 'block';
+      appMenu.style.left = '0';
+      document.body.style.overflow = 'hidden';
+    } else {
+      appMenu.style.display = '';
+      appMenu.style.left = '';
+      document.body.style.overflow = '';
+    }
   }
 };
   return (
